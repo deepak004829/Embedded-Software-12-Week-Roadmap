@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Embedded Software Switch — 12 Week Roadmap</title>
+<style>
+:root{--bg:#fff;--p:#f6f8fa;--b:#d0d7de;--t:#1f2328;--m:#656d76;--a:#0969da;--g:#1a7f37;--r:#cf222e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1117;--p:#161b22;--b:#30363d;--t:#e6edf3;--m:#8b949e;--a:#4493f8;--g:#3fb950;--r:#f85149}}
+:root[data-theme="dark"]{--bg:#0d1117;--p:#161b22;--b:#30363d;--t:#e6edf3;--m:#8b949e;--a:#4493f8;--g:#3fb950;--r:#f85149}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font:14px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+#app{max-width:1000px;margin:0 auto;padding:12px}
+h1{font-size:18px;margin:0}h2{margin:0;font-size:22px}h3{font-size:14px;margin:16px 0 6px}
+.card{background:var(--p);border:1px solid var(--b);border-radius:6px;padding:14px;margin:10px 0}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.grow{flex:1;min-width:140px}.m{color:var(--m);font-size:12px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.stat{border:1px solid var(--b);border-radius:6px;padding:8px 10px;background:var(--p)}.stat b{display:block;font-size:18px}
+button,select,input,textarea{font:inherit;color:var(--t);background:var(--bg);border:1px solid var(--b);border-radius:6px;padding:5px 9px}
+button{cursor:pointer}button:hover{background:var(--p)}button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--a)}
+.pri{background:var(--a);color:#fff;border-color:var(--a);font-weight:600}.pri:hover{background:var(--a);opacity:.9}
+.big{padding:12px 18px;font-size:15px}.ok{background:var(--g);color:#fff;border-color:var(--g)}.ok:hover{background:var(--g)}
+textarea{width:100%;min-height:80px}input[type=text],input[type=search],input[type=date],input:not([type]){min-width:0}
+.bar{height:8px;background:var(--b);border-radius:4px;overflow:hidden;margin:8px 0}.bar i{display:block;height:100%;background:var(--g)}
+nav{display:flex;gap:2px;overflow-x:auto;border-bottom:1px solid var(--b);margin-top:10px}nav button{border:0;border-bottom:2px solid transparent;border-radius:0;background:none;white-space:nowrap}
+nav button.on{border-bottom-color:var(--a);font-weight:600}
+.cal{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:8px}.wk{display:flex;gap:2px;align-items:center}.wk span{width:22px;font-size:10px;color:var(--m)}
+.cell{flex:1;min-width:0;aspect-ratio:1;padding:0;font-size:10px;border-radius:3px}.cell.ok{font-weight:700}.cell.cur{outline:2px solid var(--a)}.cell.sel{border-color:var(--a)}
+.r{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:6px 0;border-bottom:1px solid var(--b)}.r input[type=text]{flex:1;min-width:120px}
+.tag{font-size:11px;border:1px solid var(--b);border-radius:10px;padding:0 7px;color:var(--m)}
+.chk{display:flex;gap:8px;align-items:center;padding:4px 0}.chk input{width:18px;height:18px}
+details{border:1px solid var(--b);border-radius:6px;margin:6px 0;background:var(--p)}summary{padding:8px 12px;cursor:pointer;font-weight:600}details>div{padding:0 12px 8px}
+.dn{color:var(--g)}a{color:var(--a)}.f{display:grid;gap:6px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+@media(max-width:560px){h2{font-size:19px}}
+</style></head><body><div id="app"></div>
+<script>
+const K='esw12roadmap',$=s=>document.querySelector(s);
+const PH=['Phase 1 · C/C++ + DSA','Phase 1 · C/C++ + DSA','Phase 1 · C/C++ + DSA','Phase 2 · OS + Linux','Phase 2 · OS + Linux','Phase 3 · Systems','Phase 3 · Systems','Phase 3 · Systems','Phase 3 · Systems','Phase 4 · Design + Interview','Phase 4 · Design + Interview','Phase 4 · Design + Interview'];
+const WN=['C/C++ fundamentals','C++ STL + DSA','DSA core','Operating Systems','Linux + memory','Networking','Multithreading','Embedded Linux','Embedded interview depth','System Design','Interview Questions','Final project + interview prep'];
+const D=("C memory: stack, heap, pointers|Arrays + pointers|Strings in C|struct, union, enum, typedef|Bit manipulation|C++ basics: classes, inheritance, virtual functions|Revision + test|vector, pair, array, iterator|set, unordered_set, map, unordered_map|stack, queue, deque, priority_queue|Linked lists|Recursion|Sorting|DSA test|Arrays + hashing|Two pointers|Sliding window|Binary search|Stack|Queue + heap|DSA mock|OS fundamentals|Processes|Threads|Scheduling|Synchronization|Deadlocks|OS interview test|Virtual memory|Memory allocation|Linux commands|Linux processes|Linux files + file descriptors|Linux IPC|Build Linux C log analyzer|Networking basics|OSI / TCP-IP|TCP vs UDP|TCP handshake|IP, subnet, ARP, DNS, DHCP|Socket programming|Networking interview test|pthreads|Mutex|Race conditions|Condition variables + producer-consumer|Deadlock|Atomic operations|Multithreading mock|Embedded Linux architecture|Linux boot process|Device Tree|Linux drivers|Character drivers|Interrupts|DMA|Memory-mapped I/O|I2C|SPI|UART|CAN|RTOS fundamentals|Embedded interview mock|System design fundamentals|Temperature monitoring system|Aircraft/vehicle health monitoring system|Logger architecture|Producer-consumer architecture|Failure handling, watchdog, recovery|Real-time telemetry system design|C interview questions|C++ interview questions|OS interview questions|Linux interview questions|Networking interview questions|Embedded interview questions|Full mock interview|Project architecture|Log generator|Log collector|Parser + ring buffer|Multithreading + synchronization|Testing, debugging, documentation|Final project demo + complete mock interview").split('|');
+const T={1:['Stack vs heap layout, pointers, addresses, dereferencing','Pointer arithmetic on arrays'],5:['Set / clear / toggle / check nth bit','Count set bits, check power of 2','Reverse bits, extract a bit field'],6:['References vs pointers','Classes, constructors/destructors','Inheritance, polymorphism, virtual functions'],7:['Revise Days 1-6','Timed self-test; log every mistake in the Mistake Log']};
+const PR={1:'Print addresses of a local, a global and a malloc\'d variable; explain the layout',2:'Pass a 2D array to a function three ways',3:'Implement your own strlen, strcpy, memmove',4:'Register map using a union + bit fields',5:'Implement all bit operations in C with asserts',6:'Shape hierarchy with virtual functions and virtual destructor',35:'Build the Linux C log analyzer (parse, count levels, top errors)',41:'TCP client/server in C (echo server)',44:'Multithreaded counter: with and without mutex',46:'Producer-consumer with condition variables',65:'Write a design doc: temperature monitoring system',66:'Write a design doc: vehicle health monitoring',70:'Write a design doc: real-time telemetry system',78:'Draw the final project architecture',79:'Implement the log generator',80:'Implement the log collector',81:'Implement parser + ring buffer',82:'Add threads + synchronization',83:'Tests, debugging, README',84:'Demo the project end to end'};
+const QS=[[1,'C',"What is a pointer?|NULL pointer?|Dangling pointer?|Wild pointer?|*p vs &p?|Pointer arithmetic?|Stack vs heap?|Where are global variables stored?|What happens when malloc fails?"],[2,'C',"Why does an array name decay to a pointer?|arr vs &arr?|char* vs char[]?|How is a 2D array stored?|How do you pass a 2D array to a function?"],[3,'C',"Why does a C string require '\\0'?|strlen vs sizeof?|memcpy vs memmove?|What does memset actually do?|Why can strcpy cause a buffer overflow?"],[4,'C',"struct vs union?|Size of a union?|Why use a union in embedded systems?|What is typedef?|Self-referencing struct?"],[6,'C++',"Pointer vs reference?|Constructor vs destructor?|Virtual function?|Pure virtual function?|Virtual destructor?|Overloading vs overriding?"],[24,'OS',"Process vs thread?"],[33,'Linux',"What is a file descriptor?"],[38,'Networking',"TCP vs UDP?"],[44,'Multithreading',"Mutex vs semaphore?"],[51,'Embedded Linux',"Explain the Linux boot sequence."],[58,'Embedded',"I2C vs SPI?"],[65,'System Design',"Design a temperature monitoring system."]];
+const QC=['C','C++','OS','Linux','Networking','Multithreading','Embedded','Embedded Linux','System Design'];
+const DS={Arrays:"Two Sum:E|Best Time to Buy/Sell Stock:E|Contains Duplicate:E|Maximum Subarray:M|Majority Element:E|Missing Number:E|Move Zeroes:E|Rotate Array:M|Remove Duplicates:E|Merge Sorted Array:E|Rearrange Array:M|Leaders in Array:E|Longest Consecutive Sequence:M|Set Matrix Zeroes:M|Spiral Matrix:M",
+Strings:"Valid Anagram:E|Valid Palindrome:E|Reverse String:E|Longest Common Prefix:E|Longest Substring Without Repeating Characters:M|Group Anagrams:M|String Compression:M|Isomorphic Strings:E|First Unique Character:E|Reverse Words:M",
+'Linked List':"Reverse Linked List:E|Middle of Linked List:E|Linked List Cycle:E|Merge Two Sorted Lists:E|Remove Nth Node:M|Intersection of Linked Lists:E|Palindrome Linked List:E|Add Two Numbers:M|Reverse Nodes in K Group:H|Sort List:M",
+'Stack/Queue':"Valid Parentheses:E|Min Stack:M|Next Greater Element:E|Daily Temperatures:M|Implement Queue using Stack:E|Implement Stack using Queue:E|Largest Rectangle:H|Sliding Window Maximum:H|Evaluate RPN:M|Stock Span:M",
+'Binary Search':"Binary Search:E|Search Insert Position:E|Search in Rotated Array:M|Find Peak Element:M|Koko Eating Bananas:M",Trees:"Maximum Depth:E|Invert Binary Tree:E|Level Order Traversal:M|Validate BST:M|Lowest Common Ancestor:M",
+Heap:"Kth Largest Element:M|Top K Frequent Elements:M|Merge K Sorted Lists:H|Median from Data Stream:H|Task Scheduler:M",Graph:"Number of Islands:M|Clone Graph:M|Course Schedule:M|Rotting Oranges:M|Shortest Path in Binary Matrix:M",
+'Dynamic Programming':"Climbing Stairs:E|House Robber:M|Coin Change:M|Longest Increasing Subsequence:M|Edit Distance:H"};
+const PJ=['Linux Log Analyzer','Producer-Consumer implementation','TCP client/server','Multithreaded counter','Embedded Linux exercises','Sensor monitoring system design','Telemetry system design'];
+const iso=d=>new Date(d-d.getTimezoneOffset()*6e4).toISOString().slice(0,10);
+const today=()=>iso(new Date());
+function seed(){const s={start:today(),done:{},dsa:[],iq:[],pr:PJ.map((n,i)=>({id:i+1,n,st:'Not Started',note:''})),rv:{},mk:[],nid:1,theme:''};let i=0;
+for(const c in DS)DS[c].split('|').forEach(x=>{const[n,d]=x.split(':');const named=i<40;s.dsa.push({id:s.nid++,c,n,d:{E:'Easy',M:'Medium',H:'Hard'}[d],st:'Not Started',dt:'',note:'',day:named?8+Math.floor(i*14/40):0});i++});
+QS.forEach(([d,c,q])=>q.split('|').forEach(x=>s.iq.push({id:s.nid++,c,q:x,st:'New',a:'',rv:'',day:d})));return s}
+function load(){try{const x=JSON.parse(localStorage.getItem(K));if(x&&x.done&&x.dsa)return x}catch(e){}return seed()}
+let S=load(),V='today',SEL=0,F={},OPEN=new Set();
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}};
+const e=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const g=n=>S.done[n]||{},wk=n=>Math.ceil(n/7),R7=w=>[1,2,3,4,5,6,7].map(i=>(w-1)*7+i);
+const dayDate=n=>{const d=new Date(S.start+'T00:00:00');d.setDate(d.getDate()+n-1);return iso(d)};
+const cur=()=>{const x=Math.floor((new Date(today()+'T00:00:00')-new Date(S.start+'T00:00:00'))/864e5)+1;return Math.max(1,Math.min(84,x))};
+const pct=n=>['core','dsa','iq','pr'].filter(k=>g(n)[k]).length*25;
+const nDone=()=>R7(0).length&&Array.from({length:84},(_,i)=>i+1).filter(n=>g(n).c).length;
+const streak=()=>{let n=cur(),c=0;if(!g(n).c)n--;while(n>=1&&g(n).c){c++;n--}return c};
+const opts=(l,v)=>l.map(x=>`<option${x==v?' selected':''}>${e(x)}</option>`).join('');
+const yt=q=>'https://www.youtube.com/results?search_query='+encodeURIComponent(q),gg=q=>'https://www.google.com/search?q='+encodeURIComponent(q);
+const ST=['Not Started','Attempted','Solved'],QST=['New','Learning','Confident'],PST=['Not Started','In Progress','Done'];
+const find=(a,id)=>S[a].find(x=>x.id==id);
+function head(){const c=cur(),dd=nDone(),sv=S.dsa.filter(p=>p.st=='Solved').length,iq=S.iq.filter(q=>q.st=='Confident').length,pd=Array.from({length:84},(_,i)=>i+1).filter(n=>g(n).pr).length,pj=S.pr.filter(p=>p.st=='Done').length;
+const st=[['Overall',Math.round(dd/84*100)+'%'],['Days done',dd+' / 84'],['Current day',c],['Current week',wk(c)],['Streak',streak()+' d'],['DSA solved',sv+' / '+S.dsa.length],['Questions confident',iq+' / '+S.iq.length],['Practical',pd+' days, '+pj+'/'+S.pr.length+' projects']];
+let cal='';for(let w=1;w<=12;w++)cal+=`<div class="wk"><span>W${w}</span>${R7(w).map(n=>`<button class="cell ${g(n).c?'ok':''} ${n==c?'cur':''} ${n==(SEL||c)?'sel':''}" data-a="go" data-i="${n}" title="Day ${n} · ${dayDate(n)}">${g(n).c?'✓':n}</button>`).join('')}</div>`;
+return `<div class="row"><h1 class="grow">Embedded Software Switch — 12 Week Roadmap</h1><button data-a="theme">Light / Dark</button></div>
+<div class="stats" style="margin-top:10px">${st.map(x=>`<div class="stat"><span class="m">${x[0]}</span><b>${x[1]}</b></div>`).join('')}</div><div class="bar"><i style="width:${dd/84*100}%"></i></div><div class="cal">${cal}</div>
+<nav>${[['today','Today'],['road','Roadmap'],['dsa','DSA'],['iq','Questions'],['proj','Projects'],['rev','Weekly Review'],['mk','Mistakes'],['data','Data']].map(x=>`<button class="${V==x[0]?'on':''}" data-a="tab" data-i="${x[0]}">${x[1]}</button>`).join('')}</nav>`}
+function vToday(){const n=SEL||cur(),d=g(n),ds=S.dsa.filter(p=>p.day==n),qs=S.iq.filter(q=>q.day==n),w=wk(n),p=pct(n);
+const ck=(k,l)=>`<label class="chk"><input type="checkbox" data-a="chk" data-i="${k}" ${d[k]?'checked':''}>${l}</label>`;
+return `<div class="m" style="margin-top:10px">Today: ${today()}</div><section class="card"><div class="row"><button data-a="nav" data-i="-1">←</button><div class="grow"><div class="m">${PH[w-1]} · Week ${w}: ${WN[w-1]} · ${dayDate(n)}${n==cur()?' (today)':''}</div><h2>DAY ${n} / 84</h2><div><b>${e(D[n-1])}</b></div></div><button data-a="nav" data-i="1">→</button></div>
+<div class="bar"><i style="width:${p}%"></i></div><div class="m">${p}% of this day</div>
+<div class="row" style="margin:8px 0"><button class="pri big" data-a="start">Start Today's Study</button><button class="big ${d.c?'ok':''}" data-a="comp">${d.c?'✓ Day complete (undo)':'Mark Day Complete'}</button></div>
+<div id="tasks">${ck('core','Core Topic Complete')}${ck('dsa','DSA Complete ('+ds.length+' problems)')}${ck('iq','Interview Questions Complete ('+(qs.length||'self-made')+')')}${ck('pr','Practical Complete')}</div></section>
+<section class="card"><h3 style="margin-top:0">Learning tasks</h3><ul>${(T[n]||['Study: '+D[n-1],'Write notes in your own words','Go through the linked resources']).map(x=>`<li>${e(x)}</li>`).join('')}</ul>
+<h3>Interview questions</h3>${qs.length?qs.map(q=>`<div class="r"><span class="grow">${e(q.q)} <span class="tag">${q.c}</span></span><select data-a="qst" data-i="${q.id}">${opts(QST,q.st)}</select></div>`).join(''):`<div class="m">No questions seeded for this day. Write 5 interview questions on "${e(D[n-1])}" and add them in the Questions tab.</div>`}
+<h3>DSA problems</h3>${ds.length?ds.map(q=>`<div class="r"><span class="grow">${e(q.n)} <span class="tag">${q.d}</span></span><select data-a="dst" data-i="${q.id}">${opts(ST,q.st)}</select></div>`).join(''):'<div class="m">No DSA problems mapped to this day. Use the time to revise or open the DSA tracker.</div>'}
+<h3>Practical / coding task</h3><div>${e(PR[n]||'Hands-on: write and run a small program or exercise on "'+D[n-1]+'"')}</div>
+<h3>Resources</h3><ul>${[['YouTube: '+D[n-1],yt(D[n-1]+' tutorial')],['YouTube: interview questions',yt(D[n-1]+' interview questions')],['GeeksforGeeks search',gg('site:geeksforgeeks.org '+D[n-1])]].map(x=>`<li><a target="_blank" rel="noopener" href="${x[1]}">${e(x[0])}</a></li>`).join('')}</ul>
+<h3>Notes</h3><textarea data-s="done:${n}:notes" placeholder="Notes for day ${n}">${e(d.notes||'')}</textarea></section>`}
+function vRoad(){let h='';for(let w=1;w<=12;w++){const dc=R7(w).filter(n=>g(n).c).length;h+=`<details data-w="${w}" ${OPEN.has(w)?'open':''}><summary class="${dc==7?'dn':''}">Week ${w} — ${WN[w-1]} <span class="m">· ${PH[w-1]} · ${dc}/7</span></summary><div>${R7(w).map(n=>`<div class="r"><span class="${g(n).c?'dn':''}" style="width:20px">${g(n).c?'✓':''}</span><button data-a="go" data-i="${n}">Day ${n}</button><span class="grow ${g(n).c?'dn':''}">${e(D[n-1])}</span><span class="m">${dayDate(n)} · ${pct(n)}%</span></div>`).join('')}</div></details>`}return h}
+function vDsa(){const q=(F.dq||'').toLowerCase(),cs=Object.keys(DS);let h=`<div class="card"><div class="f"><input type="search" id="f_dq" data-f="dq" placeholder="Search problems" value="${e(F.dq||'')}"><select data-f="ds"><option value="">All statuses</option>${opts(ST,F.ds)}</select><select data-f="dc"><option value="">All categories</option>${opts(cs,F.dc)}</select></div>
+<div class="row" style="margin-top:8px"><input id="an" placeholder="New problem name" class="grow"><select id="ac">${opts(cs)}</select><select id="ad">${opts(['Easy','Medium','Hard'],'Medium')}</select><button data-a="dsaAdd">Add</button></div></div>`;
+cs.forEach(c=>{if(F.dc&&F.dc!=c)return;const all=S.dsa.filter(p=>p.c==c),l=all.filter(p=>(!F.ds||p.st==F.ds)&&p.n.toLowerCase().includes(q));
+h+=`<h3>${c} <span class="m">${all.filter(p=>p.st=='Solved').length}/${all.length} solved</span></h3>`+(l.length?l.map(p=>`<div class="r"><span class="grow"><b>${e(p.n)}</b> <span class="tag">${p.d}</span>${p.day?` <span class="m">Day ${p.day}</span>`:''}</span><select data-a="dst" data-i="${p.id}">${opts(ST,p.st)}</select><span class="m">${p.dt||''}</span><input type="text" data-s="dsa:${p.id}:note" placeholder="Notes" value="${e(p.note)}"><button data-a="dsaEd" data-i="${p.id}">Edit</button><button data-a="dsaDel" data-i="${p.id}">Delete</button></div>`).join(''):'<div class="m">Nothing here yet. Add problems above.</div>')});return h}
+function vIq(){const q=(F.qq||'').toLowerCase(),l=S.iq.filter(x=>(!F.qc||x.c==F.qc)&&(!F.qs||x.st==F.qs)&&x.q.toLowerCase().includes(q));
+return `<div class="card"><div class="f"><input type="search" id="f_qq" data-f="qq" placeholder="Search questions" value="${e(F.qq||'')}"><select data-f="qc"><option value="">All categories</option>${opts(QC,F.qc)}</select><select data-f="qs"><option value="">All statuses</option>${opts(QST,F.qs)}</select></div>
+<div class="row" style="margin-top:8px"><input id="nq" class="grow" placeholder="New question"><select id="nc">${opts(QC)}</select><button data-a="iqAdd">Add</button></div></div><div class="m">${l.length} questions · ${S.iq.filter(x=>x.st=='Confident').length} confident</div>`+
+l.map(x=>`<div class="card"><div class="row"><b class="grow">${e(x.q)}</b><span class="tag">${x.c}</span><select data-a="qst" data-i="${x.id}">${opts(QST,x.st)}</select></div><textarea data-s="iq:${x.id}:a" placeholder="My answer / notes">${e(x.a)}</textarea><div class="row"><span class="m grow">Last reviewed: ${x.rv||'never'}</span><button data-a="iqRev" data-i="${x.id}">Reviewed today</button><button data-a="iqEd" data-i="${x.id}">Edit</button><button data-a="iqDel" data-i="${x.id}">Delete</button></div></div>`).join('')}
+function vProj(){return `<div class="card row"><input id="np" class="grow" placeholder="New project / exercise"><button data-a="pAdd">Add</button></div>`+S.pr.map(p=>`<div class="card"><div class="row"><b class="grow">${e(p.n)}</b><select data-a="pst" data-i="${p.id}">${opts(PST,p.st)}</select><button data-a="pDel" data-i="${p.id}">Delete</button></div><textarea data-s="pr:${p.id}:note" placeholder="Notes, repo link, what's left">${e(p.note)}</textarea></div>`).join('')}
+function wstat(w){const days=R7(w),dts=days.map(dayDate);return{dd:days.filter(n=>g(n).c).length,ds:S.dsa.filter(p=>p.st=='Solved'&&dts.includes(p.dt)).length,iq:S.iq.filter(x=>dts.includes(x.rv)).length,pr:days.filter(n=>g(n).pr).length,mk:S.mk.filter(m=>dts.includes(m.dt)),ln:S.iq.filter(x=>x.st=='Learning'&&days.includes(x.day))}}
+function vRev(){const w=+F.rw||wk(cur()),s=wstat(w),r=S.rv[w]||{},weak=[...new Set([...s.mk.map(m=>m.tp),...s.ln.map(x=>x.c)])];
+const ta=(k,l)=>`<h3>${l}</h3><textarea data-s="rv:${w}:${k}">${e(r[k]||'')}</textarea>`;
+return `<div class="card row"><b>Week</b><select data-f="rw">${Array.from({length:12},(_,i)=>`<option value="${i+1}"${i+1==w?' selected':''}>Week ${i+1} — ${WN[i]}</option>`).join('')}</select></div>
+<div class="stats"><div class="stat"><span class="m">Days completed</span><b>${s.dd}/7</b></div><div class="stat"><span class="m">DSA solved</span><b>${s.ds}</b></div><div class="stat"><span class="m">Questions reviewed</span><b>${s.iq}</b></div><div class="stat"><span class="m">Practical done</span><b>${s.pr}</b></div><div class="stat"><span class="m">Mistakes logged</span><b>${s.mk.length}</b></div></div>
+<div class="card"><b>Weak topics (from mistakes + "Learning" questions)</b><div>${weak.length?weak.map(e).join(', '):'<span class="m">None yet</span>'}</div>${ta('learned','What I learned')}${ta('struggled','What I struggled with')}${ta('revisit','Topics I need to revisit')}${ta('dsa','DSA problems I couldn\'t solve')}${ta('iq','Interview questions I couldn\'t answer')}${ta('next','Notes for next week')}</div>`}
+function vMk(){const l=S.mk.filter(m=>!F.mt||m.tp==F.mt),tp=[...new Set(S.mk.map(m=>m.tp))];
+const ta=(i,l)=>`<textarea id="${i}" placeholder="${l}" style="min-height:56px"></textarea>`;
+return `<div class="card"><b>Add mistake</b><div class="f" style="margin:8px 0"><input type="date" id="md" value="${today()}"><input id="mt" list="tl" placeholder="Topic"><datalist id="tl">${QC.map(c=>`<option>${c}</option>`).join('')}<option>DSA</option></datalist></div>${ta('mq','Question / problem')}${ta('mw','What I did wrong')}${ta('mc','Correct concept')}${ta('ma','How I will avoid it next time')}<div style="margin-top:6px"><button class="pri" data-a="mkAdd">Add to log</button></div></div>
+<div class="row"><b class="grow">${l.length} entries</b><select data-f="mt"><option value="">All topics</option>${opts(tp,F.mt)}</select></div>`+
+l.map(m=>`<div class="card"><div class="row"><b class="grow">${e(m.q)}</b><span class="tag">${e(m.tp)}</span><span class="m">${m.dt}</span><button data-a="mkDel" data-i="${m.id}">Delete</button></div><p><b>Wrong:</b> ${e(m.w)}</p><p><b>Correct:</b> ${e(m.c)}</p><p><b>Next time:</b> ${e(m.a)}</p></div>`).join('')}
+function vData(){return `<div class="card"><h3 style="margin-top:0">Start date (Day 1)</h3><div class="row"><input type="date" id="sd" value="${S.start}"><button data-a="sd">Save start date</button></div><div class="m">Missing days never reset progress; the current day just moves with the calendar.</div>
+<h3>Backup</h3><div class="row"><button data-a="exp">Download JSON</button><button data-a="copy">Copy JSON</button><input type="file" id="imf" accept=".json,application/json"><button data-a="impF">Import file</button></div>
+<textarea id="jb" placeholder="Or paste backup JSON here, then click Import pasted"></textarea><div class="row" style="margin-top:6px"><button data-a="impT">Import pasted</button><button data-a="show">Show current JSON</button></div>
+<h3>Reset</h3><button data-a="rst" style="color:var(--r)">Reset all progress</button></div>`}
+const V_={today:vToday,road:vRoad,dsa:vDsa,iq:vIq,proj:vProj,rev:vRev,mk:vMk,data:vData};
+function R(){document.documentElement.dataset.theme=S.theme||'';$('#app').innerHTML=head()+(V_[V])()}
+function imp(t){try{const x=JSON.parse(t);if(!x||!x.done||!x.dsa||!x.iq)throw 0;if(!confirm('Replace current data with the imported backup?'))return;S=x;save();R();alert('Imported.')}catch(_){alert('Import failed: not a valid backup file.')}}
+function setv(a,i,k,v){if(a=='done'||a=='rv'){const o=S[a][i]||(S[a][i]={});o[k]=v}else find(a,i)[k]=v}
+document.addEventListener('input',ev=>{const t=ev.target;if(t.dataset.s){const[a,i,k]=t.dataset.s.split(':');setv(a,i,k,t.value);save();return}
+if(t.dataset.f){F[t.dataset.f]=t.value;R();const x=document.getElementById('f_'+t.dataset.f);if(x){x.focus();x.setSelectionRange(1e3,1e3)}}});
+document.addEventListener('toggle',ev=>{const w=ev.target.dataset&&ev.target.dataset.w;if(w){ev.target.open?OPEN.add(+w):OPEN.delete(+w)}},true);
+document.addEventListener('change',ev=>{const t=ev.target,a=t.dataset.a;if(!a)return;const n=SEL||cur(),i=t.dataset.i;
+if(a=='chk'){(S.done[n]=g(n)===S.done[n]?S.done[n]:{...g(n)})[i]=t.checked}
+else if(a=='dst'){const p=find('dsa',i);p.st=t.value;p.dt=t.value=='Solved'?today():''}
+else if(a=='qst'){const q=find('iq',i);q.st=t.value;q.rv=today()}
+else if(a=='pst')find('pr',i).st=t.value;
+save();R()});
+document.addEventListener('click',ev=>{const t=ev.target.closest('[data-a]');if(!t||t.tagName=='SELECT'||t.type=='checkbox')return;const a=t.dataset.a,i=t.dataset.i,n=SEL||cur(),v=id=>$('#'+id).value.trim();
+if(a=='tab')V=i;else if(a=='go'){SEL=+i;V='today';scrollTo(0,0)}
+else if(a=='nav')SEL=Math.max(1,Math.min(84,n+ +i));
+else if(a=='start'){const o=S.done[n]||(S.done[n]={});o.started=1;save();const f=(document.querySelector('a[target]')||{}).href;document.getElementById('tasks').scrollIntoView({behavior:'smooth'});return}
+else if(a=='comp'){const o=S.done[n]||(S.done[n]={});o.c=!o.c}
+else if(a=='theme'){const dark=getComputedStyle(document.body).backgroundColor!='rgb(255, 255, 255)';S.theme=dark?'light':'dark'}
+else if(a=='dsaAdd'){if(!v('an'))return;S.dsa.push({id:S.nid++,c:v('ac'),n:v('an'),d:v('ad'),st:'Not Started',dt:'',note:'',day:0})}
+else if(a=='dsaEd'){const p=find('dsa',i),x=prompt('Problem name',p.n);if(x)p.n=x}
+else if(a=='dsaDel'){if(confirm('Delete this problem?'))S.dsa=S.dsa.filter(p=>p.id!=i)}
+else if(a=='iqAdd'){if(!v('nq'))return;S.iq.push({id:S.nid++,c:v('nc'),q:v('nq'),st:'New',a:'',rv:'',day:0})}
+else if(a=='iqEd'){const q=find('iq',i),x=prompt('Question',q.q);if(x)q.q=x}
+else if(a=='iqDel'){if(confirm('Delete this question?'))S.iq=S.iq.filter(q=>q.id!=i)}
+else if(a=='iqRev')find('iq',i).rv=today();
+else if(a=='pAdd'){if(!v('np'))return;S.pr.push({id:S.nid++,n:v('np'),st:'Not Started',note:''})}
+else if(a=='pDel'){if(confirm('Delete this project?'))S.pr=S.pr.filter(p=>p.id!=i)}
+else if(a=='mkAdd'){if(!v('mq')||!v('mt')){alert('Topic and question are required.');return}S.mk.unshift({id:S.nid++,dt:v('md')||today(),tp:v('mt'),q:v('mq'),w:v('mw'),c:v('mc'),a:v('ma')})}
+else if(a=='mkDel'){if(confirm('Delete this entry?'))S.mk=S.mk.filter(m=>m.id!=i)}
+else if(a=='sd'){if(v('sd'))S.start=v('sd')}
+else if(a=='exp'){const b=new Blob([JSON.stringify(S,null,1)],{type:'application/json'}),l=document.createElement('a');l.href=URL.createObjectURL(b);l.download='roadmap-backup-'+today()+'.json';l.click();$('#jb').value=JSON.stringify(S,null,1);return}
+else if(a=='show'){$('#jb').value=JSON.stringify(S,null,1);return}
+else if(a=='copy'){const j=JSON.stringify(S);(navigator.clipboard?navigator.clipboard.writeText(j):Promise.reject()).then(()=>alert('Copied.'),()=>{$('#jb').value=j;alert('Clipboard blocked; JSON placed in the box, copy it manually.')});return}
+else if(a=='impT'){imp($('#jb').value);return}
+else if(a=='impF'){const f=$('#imf').files[0];if(!f){alert('Choose a .json file first.');return}const r=new FileReader();r.onload=()=>imp(r.result);r.readAsText(f);return}
+else if(a=='rst'){if(confirm('Reset ALL progress, notes and custom items? This cannot be undone.')){S=seed();SEL=0}else return}
+save();R()});
+R();
+</script></body></html>
